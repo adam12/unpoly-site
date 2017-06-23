@@ -168,5 +168,9 @@ helpers do
     content_link label, href, options
   end
 
+  def cdn_link(file)
+    "https://unpkg.com/unpoly@#{guide.version}/dist/#{file}"
+  end
+
 end
 
