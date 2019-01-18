@@ -12,9 +12,9 @@ module Unpoly
       }x
 
       KLASS_PATTERN = %r{
-        \@(class)  # @class ($1)
-        \          # space
-        (.+)       # class name ($2)
+        \@(class|module)  # @class ($1)
+        \                 # space
+        (.+)              # class name ($2)
       }x
 
       TITLE_PATTERN = %r{
@@ -136,6 +136,7 @@ module Unpoly
       end
 
       def parse(path)
+        log("Parsing path: #{path}")
         doc_comments = DocComment.find_in_path(path)
         doc_comments.each do |doc_comment|
           if documentable = parse_klass!(doc_comment.text) || parse_feature!(doc_comment.text)

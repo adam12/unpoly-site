@@ -52,6 +52,9 @@ sprockets.append_path File.expand_path('vendor/unpoly-local/lib/assets/styleshee
 
 Unpoly::Guide.reload
 
+puts "----------------------"
+puts Unpoly::Guide.current.klasses.inspect
+
 ##
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 #
@@ -164,6 +167,9 @@ helpers do
 
   def content_link(label, href, options = {})
     options['content-link'] = ''
+    options['up-target'] = '.page_content'
+    options['up-instant'] = ''
+    options['up-preload'] = ''
     link_to label, href, options
   end
 

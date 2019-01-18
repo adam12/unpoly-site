@@ -10,18 +10,13 @@ module Unpoly
         up.motion
         up.feedback
         up.syntax
-        up.dom
         up.proxy
         up.form
         up.tooltip
         up.history
-        up.layout
-        up.bus
-        up.radio
         up.browser
         up.protocol
         up.util
-        up.params
         up.log
       ]
 
